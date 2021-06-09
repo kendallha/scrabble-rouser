@@ -1,11 +1,9 @@
-
 import './App.css';
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
 import Word from '../Word/Word';
 import SavedWords from '../SavedWords/SavedWords';
-// import TopScorers from '../TopScorers/TopScorers';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -16,8 +14,6 @@ class App extends Component {
       topScorers: []
     }
   }
-
-  // getLetterValue
 
   render() {  
   return (
@@ -50,7 +46,5 @@ class App extends Component {
     );
   }
 }
-
-
 
 export default App;

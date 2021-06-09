@@ -24,6 +24,7 @@ class Word extends Component {
     this.setState({error: "Something went wrong, please try again."})
   }
  }
+ 
   render () {
     const wordTiles = this.state.word.split('').map(letter => {
       return (
