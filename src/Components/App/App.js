@@ -19,6 +19,10 @@ class App extends Component {
     this.setState({savedWords: [...this.state.savedWords, word]}) 
   }
 
+  addWordToTopScorers = (word) => {
+    this.setState({topScorers: [...this.state.topScorers, word]})
+  }
+
   render() {  
   return (
       <main>
