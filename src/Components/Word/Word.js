@@ -15,6 +15,7 @@ class Word extends Component {
  componentDidMount = async () => {
   try {
     const newWord = await getRandomWord();
+    console.log(newWord.word);
     const wordValue = await getWordScore(newWord.word);
     this.setState({
       word: newWord.word,
@@ -24,7 +25,7 @@ class Word extends Component {
     this.setState({error: "Something went wrong, please try again."})
   }
  }
- 
+
   render () {
     const wordTiles = this.state.word.split('').map(letter => {
       return (
