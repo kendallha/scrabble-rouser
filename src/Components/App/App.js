@@ -15,6 +15,10 @@ class App extends Component {
     }
   }
 
+  saveWord = (word) => {
+    this.setState({savedWords: [...this.state.savedWords, word]}) 
+  }
+
   render() {  
   return (
       <main>
