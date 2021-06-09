@@ -40,10 +40,14 @@ class Word extends Component {
   }
 
   render () {
-    if (this.state.error) {
-      return(
-        <Error error={this.state.error} />
+    if (!this.state.error && !this.state.word) {
+      return (
+        <h3>Looking for a great new word...</h3>
       )
+    } else if (this.state.error) {
+        return(
+          <Error error={this.state.error} />
+        )
     } else {
       const wordTiles = this.state.word.split('').map(letter => {
         return (
