@@ -9,4 +9,5 @@ const Letter = ({ tile }) => {
     </div>
   )
 }
+
 export default Letter;
