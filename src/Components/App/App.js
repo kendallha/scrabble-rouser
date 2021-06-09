@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
 import Word from '../Word/Word';
 import WordList from '../WordList/WordList';
+import Error from '../Error/Error';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -48,7 +49,9 @@ class App extends Component {
               <Welcome />
             )
           }} />
-
+          <Route>
+            <Error error={`404 - Page not found. Click 'Scrabble-rouser' above to return to the main page.`} />
+          </Route>
         </Switch>
       </main>
     );
