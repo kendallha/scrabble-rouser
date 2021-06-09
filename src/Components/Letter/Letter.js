@@ -1,11 +1,13 @@
 import React from 'react';
+import { letterValues } from '../../utilities/value-calculations';
 
-const Letter = ({ tile, value }) => {
+const Letter = ({ tile }) => {
   return(
     <div>
       <article>{tile}</article>
-      <article>{value}</article>
+      <article>{letterValues[tile]}</article>
     </div>
   )
 }
+
 export default Letter;
