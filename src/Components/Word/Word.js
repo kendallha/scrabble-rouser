@@ -38,7 +38,7 @@ class Word extends Component {
         <article className="word-display">{wordTiles}</article>
         <h3>{this.state.value}</h3>
         <button>Another word</button>
-        <button>Save</button>
+        <button onClick={() => this.props.saveWord(this.state.word)}>Save</button>
       </section>
     )
   }
