@@ -4,9 +4,14 @@ export const getRandomWord = async () => {
     return data;
 };
 
+export const getWordScore = async (word) => {
+  const response = await fetch(`https://api.wordnik.com/v4/word.json/${word}/scrabbleScore?api_key=YOURAPIKEY`);
+  const data = await handleError(response);
+  return data;
+}
+
 export const handleError = (response) => {
   if (!response.ok) {
-    console.log(response);
     throw new Error(response.message)
   } else {
     return response.json()

@@ -15,12 +15,13 @@ class Word extends Component {
  componentDidMount = async () => {
   try {
     const newWord = await getRandomWord();
+    const wordValue = await getWordScore(newWord);
     this.setState({
       word: newWord.word
       // value: calculateWordValue(newWord.word)
     })
   } catch (error) {
-    console.log(error);
+    this.setState({error: "Something went wrong, please try again."})
   }
  }
   render () {
