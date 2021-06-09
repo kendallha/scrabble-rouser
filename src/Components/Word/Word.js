@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getRandomWord } from '../../utilities/api-calls';
 import { getWordValue } from '../../utilities/value-calculations';
 import Letter from '../Letter/Letter';
+import Error from '../Error/Error';
 
 class Word extends Component {
   constructor() {
@@ -39,19 +40,29 @@ class Word extends Component {
   }
 
   render () {
-    const wordTiles = this.state.word.split('').map(letter => {
+    if (!this.state.error && !this.state.word) {
       return (
-        <Letter tile={letter} />
+        <h3>Looking for a great new word...</h3>
       )
-    });
-    return(
-      <section className='new-word'>
-        <article className="word-display">{wordTiles}</article>
-        <h3>{this.state.value}</h3>
-        <button onClick={() => this.getNewWord()}>Another word</button>
-        <button onClick={() => this.props.saveWord(this.state.word)}>Save</button>
-      </section>
-    )
+    } else if (this.state.error) {
+        return(
+          <Error error={this.state.error} />
+        )
+    } else {
+      const wordTiles = this.state.word.split('').map(letter => {
+        return (
+          <Letter tile={letter} />
+        )
+      });
+      return(
+        <section className='new-word'>
+          <article className="word-display">{wordTiles}</article>
+          <h3>{this.state.value}</h3>
+          <button onClick={() => this.getNewWord()}>Another word</button>
+          <button onClick={() => this.props.saveWord(this.state.word)}>Save</button>
+        </section>
+      )
+    }
   }
 }
 
