@@ -5,8 +5,8 @@ class Word extends Component {
   constructor() {
     super();
     this.state = {
-      word: 'WELCOME',
-      value: '14 points',
+      word: '',
+      value: '',
       error: ''
     }
   }

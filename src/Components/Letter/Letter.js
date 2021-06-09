@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Letter = ({ letter, value }) => {
+const Letter = ({ tile, value }) => {
   return(
     <div>
-      <article>{letter}</article>
+      <article>{tile}</article>
       <article>{value}</article>
     </div>
   )

@@ -17,6 +17,8 @@ class App extends Component {
     }
   }
 
+  getLetterValue
+
   render() {  
   return (
       <main>
