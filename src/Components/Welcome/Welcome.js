@@ -4,7 +4,7 @@ import Letter from '../Letter/Letter';
 const Welcome = () => {
   const wordTiles = 'HELLOWORLD'.split('').map(letter => {
     return (
-      <Letter tile={letter} value='2' />
+      <Letter tile={letter} id={Date.now()}/>
       )
     })
   return(

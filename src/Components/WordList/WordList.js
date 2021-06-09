@@ -1,9 +1,10 @@
 import React from 'react';
+import { getWordValue } from '../../utilities/value-calculations';
 
-const SavedWords = ({ words, heading }) => {
+const WordList = ({ words, heading }) => {
   const wordList = words.map(word => {
     return (
-      <li>{word.word}: {word.value}</li>
+      <li>{word}: {getWordValue(word)}</li>
     )
   });
   return(
@@ -14,4 +15,4 @@ const SavedWords = ({ words, heading }) => {
   )
 }
 
-export default SavedWords;
+export default WordList;

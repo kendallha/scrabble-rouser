@@ -13,21 +13,32 @@ class Word extends Component {
     }
   }
 
- componentDidMount = async () => {
-  try {
-    const newWord = await getRandomWord(); 
-    const formattedWord = newWord.word.toUpperCase();
-    this.setState({ 
-      word: formattedWord,
-      value: getWordValue(formattedWord)
-    })
-  } catch (error) {
-    console.log(error)
-    this.setState({error: "Something went wrong, please try again."})
+  getNewWord = async () => {
+    try {
+      const newWord = await getRandomWord(); 
+      const formattedWord = newWord.word.toUpperCase();
+      this.setState({ 
+        word: formattedWord,
+        value: getWordValue(formattedWord)
+      })
+      this.evaluateWordScore();
+    } catch (error) {
+      console.log(error)
+      this.setState({error: "Something went wrong, please try again."})
+    }
   }
- }
 
- render () {
+  componentDidMount = async () => {
+    this.getNewWord();
+  }
+
+  evaluateWordScore = () => {
+    if (this.state.value >= 10) {
+      this.props.addWord(this.state.word);
+    }
+  }
+
+  render () {
     const wordTiles = this.state.word.split('').map(letter => {
       return (
         <Letter tile={letter} />
@@ -37,8 +48,8 @@ class Word extends Component {
       <section className='new-word'>
         <article className="word-display">{wordTiles}</article>
         <h3>{this.state.value}</h3>
-        <button>Another word</button>
-        <button>Save</button>
+        <button onClick={() => this.getNewWord()}>Another word</button>
+        <button onClick={() => this.props.saveWord(this.state.word)}>Save</button>
       </section>
     )
   }
