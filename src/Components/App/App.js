@@ -30,7 +30,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/learn' render={() => {
             return (
-            <Word saveWord={this.saveWord} />
+            <Word saveWord={this.saveWord} addWord={this.addWordToTopScorers} />
             )
           }} />
           <Route path='/saved' render={() => {

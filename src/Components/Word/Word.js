@@ -21,6 +21,7 @@ class Word extends Component {
         word: formattedWord,
         value: getWordValue(formattedWord)
       })
+      this.evaluateWordScore();
     } catch (error) {
       console.log(error)
       this.setState({error: "Something went wrong, please try again."})
@@ -29,6 +30,12 @@ class Word extends Component {
 
   componentDidMount = async () => {
     this.getNewWord();
+  }
+
+  evaluateWordScore = () => {
+    if (this.state.value >= 10) {
+      this.props.addWord(this.state.word);
+    }
   }
 
   render () {
