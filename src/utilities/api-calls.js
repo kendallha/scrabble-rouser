@@ -11,8 +11,8 @@ export const getWordScore = async (word) => {
 }
 
 export const handleError = (response) => {
-  if (!response.ok) {
-    throw new Error(response.message)
+  if (!response.ok && response.status !== 404) {
+    throw new Error(response)
   } else {
     return response.json()
   }

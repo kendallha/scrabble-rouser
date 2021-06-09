@@ -14,10 +14,10 @@ class Word extends Component {
 
  componentDidMount = async () => {
   try {
-    const newWord = await getRandomWord();
+    let newWord = await getRandomWord();
     console.log(newWord.word);
-    const wordValue = await getWordScore(newWord.word);
-    this.setState({
+    let wordValue = await getWordScore(newWord.word);
+    this.setState({ 
       word: newWord.word,
       value: wordValue.value
     })
@@ -26,7 +26,7 @@ class Word extends Component {
   }
  }
 
-  render () {
+ render () {
     const wordTiles = this.state.word.split('').map(letter => {
       return (
         <Letter tile={letter} value='2' />
