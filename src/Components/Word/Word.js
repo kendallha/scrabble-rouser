@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getRandomWord } from '../../utilities/api-calls';
 import Letter from '../Letter/Letter';
 
 class Word extends Component {
@@ -11,14 +12,17 @@ class Word extends Component {
     }
   }
 
-  // getLetterValue = (letter) => {
-  //   switch (letter) {
-  //     case 'a':
-  //       value = 
-  //   }
-  // }
-
-
+ componentDidMount = async () => {
+  try {
+    const newWord = await getRandomWord();
+    this.setState({
+      word: newWord.word
+      // value: calculateWordValue(newWord.word)
+    })
+  } catch (error) {
+    console.log(error);
+  }
+ }
   render () {
     const wordTiles = this.state.word.split('').map(letter => {
       return (
