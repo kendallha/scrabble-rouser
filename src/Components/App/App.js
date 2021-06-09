@@ -16,6 +16,13 @@ class App extends Component {
   render () {
     return (
       <Header />
+      <Switch>
+        <Route exact path='/' render={() => {
+          return (
+            <Welcome />
+          )
+        }}
+      </Switch>
     );
   }
 }
