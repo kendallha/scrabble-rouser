@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getRandomWord, getWordScore } from '../../utilities/api-calls';
+import { getWordValue } from '../../utilities/value-calculations';
 import Letter from '../Letter/Letter';
 
 class Word extends Component {
@@ -14,14 +15,15 @@ class Word extends Component {
 
  componentDidMount = async () => {
   try {
-    let newWord = await getRandomWord();
-    console.log(newWord.word);
-    let wordValue = await getWordScore(newWord.word);
+    const newWord = await getRandomWord(); 
+    // console.log(newWord.word);
+    // let wordValue = await getWordScore(newWord.word);
     this.setState({ 
-      word: newWord.word,
-      value: wordValue.value
+      word: newWord.word.toUpperCase(),
+      value: getWordValue(newWord.word.toUpperCase())
     })
   } catch (error) {
+    console.log(error)
     this.setState({error: "Something went wrong, please try again."})
   }
  }

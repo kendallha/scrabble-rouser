@@ -28,6 +28,7 @@ export const letterValues = {
 }
 
 export const getWordValue = (word) => {
-  const letterScores = word.map(letter => letterValues[letter]);
+  const letterScores = word.split('').map(letter => letterValues[letter]);
+  console.log(letterScores);
   return letterScores.reduce((acc, score) => acc + score, 0)
 }
