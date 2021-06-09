@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getRandomWord, getWordScore } from '../../utilities/api-calls';
 import Letter from '../Letter/Letter';
 
 class Word extends Component {
@@ -11,15 +12,21 @@ class Word extends Component {
     }
   }
 
-  // getLetterValue = (letter) => {
-  //   switch (letter) {
-  //     case 'a':
-  //       value = 
-  //   }
-  // }
+ componentDidMount = async () => {
+  try {
+    let newWord = await getRandomWord();
+    console.log(newWord.word);
+    let wordValue = await getWordScore(newWord.word);
+    this.setState({ 
+      word: newWord.word,
+      value: wordValue.value
+    })
+  } catch (error) {
+    this.setState({error: "Something went wrong, please try again."})
+  }
+ }
 
-
-  render () {
+ render () {
     const wordTiles = this.state.word.split('').map(letter => {
       return (
         <Letter tile={letter} value='2' />
