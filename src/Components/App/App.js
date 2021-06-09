@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
 import Word from '../Word/Word';
 import SavedWords from '../SavedWords/SavedWords';
-import TopScorers from '../TopScorers/TopScorers';
+// import TopScorers from '../TopScorers/TopScorers';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
