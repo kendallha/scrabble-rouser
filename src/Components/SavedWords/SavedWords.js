@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SavedWords = ({ words }) => {
+const SavedWords = ({ words, heading }) => {
   const wordList = words.map(word => {
     return (
       <li>{word.word}: {word.value}</li>
@@ -8,7 +8,7 @@ const SavedWords = ({ words }) => {
   });
   return(
     <section>
-      <h3>Saved Words</h3>
+      <h3>{heading}</h3>
       <ul>{wordList}</ul>
     </section>
   )

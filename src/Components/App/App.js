@@ -22,14 +22,20 @@ class App extends Component {
       <main>
         <Header />
         <Switch>
-          <Route path='/learn' render={() => {
+          <Route exact path='/learn' render={() => {
+            return (
             <Word />
+            )
           }} />
           <Route path='/saved' render={() => {
-            <SavedWords words={this.state.savedWords} />
+            return (
+            <SavedWords words={this.state.savedWords} heading='Saved Words' />
+            )
           }} />
           <Route path='/topscorers' render={() => {
-            <TopScorers words={this.state.topScorers} />
+            return (
+            <SavedWords words={this.state.topScorers} heading='Top Scoring Words' />
+            )
           }} />
           <Route exact path='/' render={() => {
             return (
