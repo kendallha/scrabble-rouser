@@ -1,30 +1,29 @@
 
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 import Header from '../Header/Header';
+import Welcome from '../Welcome/Welcome';
+import Word from '../Word/Word';
 import { Route, Switch } from 'react-router-dom';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      word: '',
-      error: ''
-    }
-
-  }
-  render () {
+const App = () => {
     return (
-      <Header />
-      <Switch>
-        <Route exact path='/' render={() => {
-          return (
-            <Welcome />
-          )
-        }}
-      </Switch>
+      <main>
+        <Header />
+        <Switch>
+          <Route path='/learn' render={() => {
+            <Word />
+          }} />
+          <Route exact path='/' render={() => {
+            return (
+              <Welcome />
+            )
+          }} />
+
+        </Switch>
+      </main>
     );
   }
-}
+
 
 export default App;
