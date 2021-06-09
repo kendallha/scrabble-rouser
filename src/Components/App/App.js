@@ -16,10 +16,9 @@ class App extends Component {
   }
 
   saveWord = (word) => {
-    const updatedSaves = this.state.savedWords;
-    updatedSaves.push(word);
-    this.setState({savedWords: updatedSaves}) 
-    console.log(this.state.savedWords);
+    // const updatedSaves = this.state.savedWords;
+    // updatedSaves.push(word);
+    this.setState({savedWords: [...this.state.savedWords, word]}) 
   }
 
   render() {  
