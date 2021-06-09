@@ -30,7 +30,7 @@ class Word extends Component {
  render () {
     const wordTiles = this.state.word.split('').map(letter => {
       return (
-        <Letter tile={letter} value='2' />
+        <Letter tile={letter} />
       )
     });
     return(
