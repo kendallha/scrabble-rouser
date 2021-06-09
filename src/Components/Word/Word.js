@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Letter from '../Letter/Letter';
 
 class Word extends Component {
   constructor() {
