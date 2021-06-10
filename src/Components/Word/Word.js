@@ -19,11 +19,10 @@ class Word extends Component {
     try {
       const newWord = await getRandomWord(); 
       const formattedWord = newWord.word.toUpperCase();
-      const wordValue = getWordValue(formattedWord);
-      if (!this.checkForAcronyms(formattedWord) && wordValue) {
+      if (!this.checkForAcronyms(formattedWord) && getWordValue(formattedWord)) {
         this.setState({ 
           word: formattedWord,
-          value: wordValue
+          value: getWordValue(formattedWord)
         })
         this.evaluateWordScore();
       } else {
@@ -41,7 +40,6 @@ class Word extends Component {
   componentDidMount = async () => {
     this.getNewWord();
   }
-
 
   checkForAcronyms = (word) => {
     if (word.split('').includes('A') || word.split('').includes('E') || word.split('').includes('I') || word.split('').includes('O') || word.split('').includes('U') || word.split('').includes('Y')) {
@@ -69,7 +67,7 @@ class Word extends Component {
     } else {
       const wordTiles = this.state.word.split('').map(letter => {
         return (
-          <Letter tile={letter} />
+          <Letter tile={letter} id={Date.now()}/>
         )
       });
       return(

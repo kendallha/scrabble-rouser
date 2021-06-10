@@ -12,7 +12,7 @@ const WordList = ({ words, message }) => {
         )
       })
     return (
-      <div className='word-item'>
+      <div className='word-item' id={Math.random()}>
         <article className='word'>{letters}</article> 
         <p className='score'>{getWordValue(word)} points</p>
       </div>
