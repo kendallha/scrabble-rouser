@@ -67,7 +67,7 @@ class Word extends Component {
     } else {
       const wordTiles = this.state.word.split('').map(letter => {
         return (
-          <Letter tile={letter} id={Date.now()}/>
+          <Letter tile={letter} key={Math.random()}/>
         )
       });
       return(
