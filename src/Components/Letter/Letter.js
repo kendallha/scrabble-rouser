@@ -2,6 +2,7 @@ import React from 'react';
 import { letterValues } from '../../utilities/value-calculations';
 import './scrabble.css';
 import './Letter.css';
+import PropTypes from 'prop-types';
 
 const Letter = ({ tile }) => {
   return(
@@ -11,6 +12,10 @@ const Letter = ({ tile }) => {
       </div>
     </div>
   )
+}
+
+Letter.propTypes = {
+  tile: PropTypes.string
 }
 
 export default Letter;
