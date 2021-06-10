@@ -1,8 +1,8 @@
 .word-list {
-  height: 100%;
+  /* height: 100%;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: column; */
+  margin-top: 4%;
 }
 
 .word-item {
@@ -18,8 +18,13 @@
 }
 
 .score {
-  margin-top: 4%;
+  margin-top: 3%;
   font-size: 1.5em;
   font-family: 'Mate SC', serif;
 }
+
+/* .heading {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+} */
 

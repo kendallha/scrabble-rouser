@@ -18,10 +18,10 @@ const WordList = ({ words, heading }) => {
     )
   });
   return(
-    <section className='list'>
-      <h3>{heading}</h3>
+    // <section className='list'>
+    //   <h3 className='heading'>{heading}</h3>
       <article className='word-list'>{wordList}</article>
-    </section>
+    // </section>
   )
 }
 
