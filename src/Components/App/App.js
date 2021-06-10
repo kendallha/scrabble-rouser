@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {  
   return (
-      <main>
+      <main className='main'>
         <Header />
         <Switch>
           <Route exact path='/learn' render={() => {
@@ -36,12 +36,12 @@ class App extends Component {
           }} />
           <Route path='/saved' render={() => {
             return (
-            <WordList words={this.state.savedWords} heading='Saved Words' />
+            <WordList words={this.state.savedWords} message="You haven't saved any words yet." />
             )
           }} />
           <Route path='/topscorers' render={() => {
             return (
-            <WordList words={this.state.topScorers} heading='Top Scoring Words' />
+            <WordList words={this.state.topScorers} message="You haven't encountered any top-scoring words yet. Let's go find some!" />
             )
           }} />
           <Route exact path='/' render={() => {

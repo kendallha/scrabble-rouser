@@ -1,0 +1,37 @@
+.word-list {
+  margin-top: 4%;
+}
+
+.word-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.word {
+  display: flex;
+  width: 50%;
+  margin-left: 2%;
+}
+
+.score {
+  margin-top: 3%;
+  font-size: 1.5em;
+  font-family: 'Mate SC', serif;
+}
+
+.empty-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-message {
+  text-align: center;
+  font-family: 'Mate SC', serif;
+  font-size: 2em;
+  margin: 5% 0;
+  word-spacing: .06em;
+}
+
+

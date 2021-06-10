@@ -3,6 +3,7 @@ import { getRandomWord } from '../../utilities/api-calls';
 import { getWordValue } from '../../utilities/value-calculations';
 import Letter from '../Letter/Letter';
 import Error from '../Error/Error';
+import './Word.css';
 
 class Word extends Component {
   constructor() {
@@ -42,7 +43,7 @@ class Word extends Component {
   render () {
     if (!this.state.error && !this.state.word) {
       return (
-        <h3>Looking for a great new word...</h3>
+        <h3 className='loading'>Looking for a great new word...</h3>
       )
     } else if (this.state.error) {
         return(
@@ -57,9 +58,12 @@ class Word extends Component {
       return(
         <section className='new-word'>
           <article className="word-display">{wordTiles}</article>
-          <h3>{this.state.value}</h3>
-          <button onClick={() => this.getNewWord()}>Another word</button>
-          <button onClick={() => this.props.saveWord(this.state.word)}>Save</button>
+          <h3 className='points'>{this.state.value} points</h3>
+          <div className='buttons'>
+            <button className='word-button' onClick={() => this.getNewWord()}>Another word</button>
+            <button className='word-button' onClick={() => this.props.saveWord(this.state.word)}>Save
+            </button>
+          </div>
         </section>
       )
     }

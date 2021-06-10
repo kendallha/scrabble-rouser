@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.word-tiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 4%;
+}
+
+.intro {
+  padding: 2% 5% 1% 5%;
+  font-size: 1.3em;
+}
+
+/* .start {
+  padding: 1%;
+  font-size: 1.5em;
+  background: #dfbf93;
+  border: 2px solid transparent;
+  font-family: 'Mate SC', serif;
+}
+
+.start:hover {
+  border: 2px solid black;
+} */

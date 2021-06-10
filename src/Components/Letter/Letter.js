@@ -1,11 +1,14 @@
 import React from 'react';
 import { letterValues } from '../../utilities/value-calculations';
+import './scrabble.css';
+import './Letter.css';
 
 const Letter = ({ tile }) => {
   return(
-    <div>
-      <article>{tile}</article>
-      <article>{letterValues[tile]}</article>
+    <div className='scrabble-wrapper' >
+      <div className="scrabble-container">
+        <span className="scrabble-tile__letter">{tile}<span className="scrabble-tile__number">{letterValues[tile]}</span></span>
+      </div>
     </div>
   )
 }
