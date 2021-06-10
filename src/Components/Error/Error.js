@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Error.css';
+import PropTypes from 'prop-types'
 
 const Error = ({ error }) => {
   return(
