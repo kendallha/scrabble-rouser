@@ -28,17 +28,16 @@ class App extends Component {
 
   saveToStorage = (list) => {
     localStorage.setItem(list, JSON.stringify(this.state[list]));
-    // localStorage.setItem('topScorers', JSON.stringify(this.state.topScorers));
   }
 
   getFromStorage = () => {
-    const savedWordsString = localStorage.getItem('savedWords');
-    console.log(savedWordsString);
-    const topWordsList = JSON.parse(localStorage.getItem('topScorers'));
+    const savedWordsString = JSON.parse(localStorage.getItem('savedWords')) || [];
+    const topWordsList = JSON.parse(localStorage.getItem('topScorers')) || [];
     this.setState({
-      savedWords: JSON.parse(savedWordsString),
+      savedWords: savedWordsString,
       topScorers: topWordsList
     })
+  
   }
 
   removeFromSaved = (word, type) => {
@@ -55,36 +54,36 @@ class App extends Component {
       this.saveToStorage('topScorers');
     }
     return (
-        <main className='main'>
-          <Header />
-          <Switch>
-            <Route exact path='/learn' render={() => {
-              return (
-              <Word saveWord={this.saveWord}/>
+      <main className='main'>
+        <Header />
+        <Switch>
+          <Route exact path='/learn' render={() => {
+            return (
+            <Word saveWord={this.saveWord}/>
+            )
+          }} />
+          <Route path='/saved' render={() => {
+            return (
+            <WordList words={this.state.savedWords} message="You haven't saved any words yet." removeWord={this.removeFromSaved} type='savedWords' />
               )
-            }} />
-            <Route path='/saved' render={() => {
-              return (
-              <WordList words={this.state.savedWords} message="You haven't saved any words yet." removeWord={this.removeFromSaved} type='savedWords' />
-              )
-            }} />
-            <Route path='/topscorers' render={() => {
-              return (
-              <WordList words={this.state.topScorers} message="You haven't encountered any top-scoring words yet. Let's go find some!" removeWord={this.removeFromSaved} type='topScorers' />
-              )
-            }} />
-            <Route exact path='/' render={() => {
-              return (
-                <Welcome />
-              )
-            }} />
-            <Route>
-              <Error error={`404 - Page not found. Click 'Scrabble-rouser' above to return to the main page.`} />
-            </Route>
-          </Switch>
-        </main>
-      );
-    }
+          }} />
+          <Route path='/topscorers' render={() => {
+            return (
+            <WordList words={this.state.topScorers} message="You haven't encountered any top-scoring words yet. Let's go find some!" removeWord={this.removeFromSaved} type='topScorers' />
+            )
+          }} />
+          <Route exact path='/' render={() => {
+            return (
+              <Welcome />
+            )
+          }} />
+          <Route>
+            <Error error={`404 - Page not found.`} />
+          </Route>
+        </Switch>
+      </main>
+    );
+  }
 }
 
 export default App;
