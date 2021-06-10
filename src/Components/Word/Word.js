@@ -4,6 +4,7 @@ import { getWordValue } from '../../utilities/value-calculations';
 import Letter from '../Letter/Letter';
 import Error from '../Error/Error';
 import './Word.css';
+import PropTypes from 'prop-types';
 
 class Word extends Component {
   constructor() {
@@ -83,6 +84,10 @@ class Word extends Component {
       )
     }
   }
+}
+
+Word.propTypes = {
+  saveWord: PropTypes.func
 }
 
 export default Word;
