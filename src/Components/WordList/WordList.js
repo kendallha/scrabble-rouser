@@ -12,7 +12,7 @@ const WordList = ({ words, message, removeWord, type }) => {
         )
       })
     return (
-      <div className='word-item' id={Math.random()}>
+      <div className='word-item' key={Math.random()}>
         <article className='word'>{letters}</article> 
         <p className='score'>{getWordValue(word)} points</p>
         <i className="fas fa-times-circle fa-2x" onClick={() => removeWord(word, type)}></i>

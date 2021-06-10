@@ -16,14 +16,28 @@ class App extends Component {
     }
   }
 
-  saveWord = (word) => {
-    if (!this.state.savedWords.includes(word)) {
-      this.setState({savedWords: [...this.state.savedWords, word]}) 
+  componentDidMount = () => {
+    this.getFromStorage();
+  }
+
+  saveWord = (word, type) => {
+    if (!this.state[type].includes(word)) {
+      this.setState({[type]: [...this.state[type], word]}) 
     }
   }
 
-  addWordToTopScorers = (word) => {
-    this.setState({topScorers: [...this.state.topScorers, word]})
+  saveToStorage = (list) => {
+    localStorage.setItem(list, JSON.stringify(this.state[list]));
+  }
+
+  getFromStorage = () => {
+    const savedWordsString = JSON.parse(localStorage.getItem('savedWords')) || [];
+    const topWordsList = JSON.parse(localStorage.getItem('topScorers')) || [];
+    this.setState({
+      savedWords: savedWordsString,
+      topScorers: topWordsList
+    })
+  
   }
 
   removeFromSaved = (word, type) => {
@@ -32,20 +46,26 @@ class App extends Component {
     this.setState({[type]: newList})
   }
 
-  render() {  
-  return (
+  render() { 
+    if (this.state.savedWords.length) {
+      this.saveToStorage('savedWords');
+    }
+    if (this.state.topScorers.length) {
+      this.saveToStorage('topScorers');
+    }
+    return (
       <main className='main'>
         <Header />
         <Switch>
           <Route exact path='/learn' render={() => {
             return (
-            <Word saveWord={this.saveWord} addWord={this.addWordToTopScorers} />
+            <Word saveWord={this.saveWord}/>
             )
           }} />
           <Route path='/saved' render={() => {
             return (
             <WordList words={this.state.savedWords} message="You haven't saved any words yet." removeWord={this.removeFromSaved} type='savedWords' />
-            )
+              )
           }} />
           <Route path='/topscorers' render={() => {
             return (
@@ -58,7 +78,7 @@ class App extends Component {
             )
           }} />
           <Route>
-            <Error error={`404 - Page not found. Click 'Scrabble-rouser' above to return to the main page.`} />
+            <Error error={`404 - Page not found.`} />
           </Route>
         </Switch>
       </main>

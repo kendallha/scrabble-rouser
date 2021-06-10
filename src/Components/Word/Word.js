@@ -51,7 +51,7 @@ class Word extends Component {
 
   evaluateWordScore = () => {
     if (this.state.value >= 10) {
-      this.props.addWord(this.state.word);
+      this.props.saveWord(this.state.word, 'topScorers');
     }
   }
 
@@ -67,7 +67,7 @@ class Word extends Component {
     } else {
       const wordTiles = this.state.word.split('').map(letter => {
         return (
-          <Letter tile={letter} id={Date.now()}/>
+          <Letter tile={letter} key={Math.random()}/>
         )
       });
       return(
@@ -76,7 +76,7 @@ class Word extends Component {
           <h3 className='points'>{this.state.value} points</h3>
           <div className='buttons'>
             <button className='word-button' onClick={() => this.getNewWord()}>Another word</button>
-            <button className='word-button' onClick={() => this.props.saveWord(this.state.word)}>Save
+            <button className='word-button' onClick={() => this.props.saveWord(this.state.word, 'savedWords')}>Save
             </button>
           </div>
         </section>
