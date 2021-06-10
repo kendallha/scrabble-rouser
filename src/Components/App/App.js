@@ -26,16 +26,17 @@ class App extends Component {
     }
   }
 
-  saveToStorage = () => {
-    localStorage.setItem('savedWords', JSON.stringify(this.state.savedWords));
-    localStorage.setItem('topScorers', JSON.stringify(this.state.topScorers));
+  saveToStorage = (list) => {
+    localStorage.setItem(list, JSON.stringify(this.state[list]));
+    // localStorage.setItem('topScorers', JSON.stringify(this.state.topScorers));
   }
 
   getFromStorage = () => {
-    const savedWordsList = JSON.parse(localStorage.getItem("savedWords")) || [];
-    const topWordsList = JSON.parse(localStorage.getItem("topScorers")) || [];
+    const savedWordsString = localStorage.getItem('savedWords');
+    console.log(savedWordsString);
+    const topWordsList = JSON.parse(localStorage.getItem('topScorers'));
     this.setState({
-      savedWords: savedWordsList,
+      savedWords: JSON.parse(savedWordsString),
       topScorers: topWordsList
     })
   }
@@ -47,7 +48,12 @@ class App extends Component {
   }
 
   render() { 
-    this.saveToStorage();
+    if (this.state.savedWords.length) {
+      this.saveToStorage('savedWords');
+    }
+    if (this.state.topScorers.length) {
+      this.saveToStorage('topScorers');
+    }
     return (
         <main className='main'>
           <Header />
