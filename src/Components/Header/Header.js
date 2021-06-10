@@ -10,14 +10,18 @@ const Header = () => {
       </Link>
       <nav className='nav'>
         <NavLink to='/learn' activeStyle={{
-    borderBottom: '4px solid black'
-  }}>
+          borderBottom: '3px solid black'
+          }}>
           <h2 className='nav-link'>Learn words</h2>
         </NavLink>
-        <NavLink to='/saved' >
+        <NavLink to='/saved' activeStyle={{
+          borderBottom: '3px solid black'
+          }} >
           <h2 className='nav-link'>Saved words</h2>
         </NavLink>
-        <NavLink to='/topscorers'>
+        <NavLink to='/topscorers' activeStyle={{
+          borderBottom: '3px solid black'
+          }} >
           <h2 className='nav-link'>Top-scorers</h2>
         </NavLink>
       </nav>
