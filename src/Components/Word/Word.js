@@ -49,6 +49,14 @@ class Word extends Component {
         return(
           <Error error={this.state.error} />
         )
+    } else if (!this.state.value) {
+        return(
+          <div className='issue-wrapper'>
+            <h3 className='issue'>Oh no, we had a problem scoring this word. Let's try that again.</h3>
+            <button className='word-button' onClick={() => this.getNewWord()}>Another word</button>
+          </div>
+
+        )
     } else {
       const wordTiles = this.state.word.split('').map(letter => {
         return (
