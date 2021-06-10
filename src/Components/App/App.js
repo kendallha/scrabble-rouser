@@ -16,14 +16,10 @@ class App extends Component {
     }
   }
 
-  saveWord = (word) => {
-    if (!this.state.savedWords.includes(word)) {
-      this.setState({savedWords: [...this.state.savedWords, word]}) 
+  saveWord = (word, type) => {
+    if (!this.state[type].includes(word)) {
+      this.setState({[type]: [...this.state[type], word]}) 
     }
-  }
-
-  addWordToTopScorers = (word) => {
-    this.setState({topScorers: [...this.state.topScorers, word]})
   }
 
   removeFromSaved = (word, type) => {
@@ -39,7 +35,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/learn' render={() => {
             return (
-            <Word saveWord={this.saveWord} addWord={this.addWordToTopScorers} />
+            <Word saveWord={this.saveWord}/>
             )
           }} />
           <Route path='/saved' render={() => {
