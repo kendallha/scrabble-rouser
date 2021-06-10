@@ -15,6 +15,7 @@ const WordList = ({ words, message }) => {
       <div className='word-item' id={Math.random()}>
         <article className='word'>{letters}</article> 
         <p className='score'>{getWordValue(word)} points</p>
+        <i className="fas fa-times-circle fa-2x" onClick={() => this.props.removeFromSaved(word)}></i>
       </div>
     )
   });
