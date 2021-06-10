@@ -3,7 +3,7 @@ import { getWordValue } from '../../utilities/value-calculations';
 import Letter from '../Letter/Letter';
 import './WordList.css';
 
-const WordList = ({ words, heading }) => {
+const WordList = ({ words }) => {
   const wordList = words.map(word => {
     const letters = word.split('').map(letter => {
       return (
@@ -18,10 +18,7 @@ const WordList = ({ words, heading }) => {
     )
   });
   return(
-    // <section className='list'>
-    //   <h3 className='heading'>{heading}</h3>
-      <article className='word-list'>{wordList}</article>
-    // </section>
+    <section className='word-list'>{wordList}</section>
   )
 }
 

@@ -1,7 +1,4 @@
 .word-list {
-  /* height: 100%;
-  display: flex;
-  flex-direction: column; */
   margin-top: 4%;
 }
 
@@ -23,8 +20,4 @@
   font-family: 'Mate SC', serif;
 }
 
-/* .heading {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-} */
 
