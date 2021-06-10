@@ -1,6 +1,7 @@
 import React from 'react';
 import { getWordValue } from '../../utilities/value-calculations';
 
+
 const WordList = ({ words, heading }) => {
   const wordList = words.map(word => {
     return (

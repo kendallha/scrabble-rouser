@@ -16,3 +16,15 @@ html, body {
   color: black;
   font-family: 'Open Sans', sans-serif;
 }
+
+button {
+  padding: 1%;
+  font-size: 1.5em;
+  background: #dfbf93;
+  border: 2px solid transparent;
+  font-family: 'Mate SC', serif;
+}
+
+button:hover {
+  border: 2px solid black;
+}
