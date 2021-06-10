@@ -17,7 +17,9 @@ class App extends Component {
   }
 
   saveWord = (word) => {
-    this.setState({savedWords: [...this.state.savedWords, word]}) 
+    if (!this.state.savedWords.includes(word)) {
+      this.setState({savedWords: [...this.state.savedWords, word]}) 
+    }
   }
 
   addWordToTopScorers = (word) => {
