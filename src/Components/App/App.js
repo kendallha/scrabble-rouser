@@ -26,6 +26,12 @@ class App extends Component {
     this.setState({topScorers: [...this.state.topScorers, word]})
   }
 
+  removeFromSaved = (word, type) => {
+    const newList = this.state[type];
+    newList.splice(this.state[type].indexOf(word),1);
+    this.setState({[type]: newList})
+  }
+
   render() {  
   return (
       <main className='main'>
@@ -38,12 +44,12 @@ class App extends Component {
           }} />
           <Route path='/saved' render={() => {
             return (
-            <WordList words={this.state.savedWords} message="You haven't saved any words yet." />
+            <WordList words={this.state.savedWords} message="You haven't saved any words yet." removeWord={this.removeFromSaved} type='savedWords' />
             )
           }} />
           <Route path='/topscorers' render={() => {
             return (
-            <WordList words={this.state.topScorers} message="You haven't encountered any top-scoring words yet. Let's go find some!" />
+            <WordList words={this.state.topScorers} message="You haven't encountered any top-scoring words yet. Let's go find some!" removeWord={this.removeFromSaved} type='topScorers' />
             )
           }} />
           <Route exact path='/' render={() => {
