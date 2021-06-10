@@ -43,7 +43,7 @@ class Word extends Component {
   render () {
     if (!this.state.error && !this.state.word) {
       return (
-        <h3>Looking for a great new word...</h3>
+        <h3 className='loading'>Looking for a great new word...</h3>
       )
     } else if (this.state.error) {
         return(

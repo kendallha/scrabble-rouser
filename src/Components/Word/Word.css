@@ -28,3 +28,10 @@
 .word-button {
   width: 40%;
 }
+
+.loading {
+  text-align: center;
+  font-family: 'Mate SC', serif;
+  font-size: 2em;
+  margin-top: 5%;
+}
