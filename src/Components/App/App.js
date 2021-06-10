@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {  
   return (
-      <main>
+      <main className='main'>
         <Header />
         <Switch>
           <Route exact path='/learn' render={() => {
