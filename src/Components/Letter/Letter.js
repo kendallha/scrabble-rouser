@@ -5,9 +5,9 @@ import './Letter.css';
 
 const Letter = ({ tile }) => {
   return(
-    <div class='scrabble-wrapper' >
-      <div class="scrabble-container">
-        <span class="scrabble-tile__letter">{tile}<span class="scrabble-tile__number">{letterValues[tile]}</span></span>
+    <div className='scrabble-wrapper' >
+      <div className="scrabble-container">
+        <span className="scrabble-tile__letter">{tile}<span className="scrabble-tile__number">{letterValues[tile]}</span></span>
       </div>
     </div>
   )

@@ -4,7 +4,7 @@ import Letter from '../Letter/Letter';
 import './Welcome.css';
 
 const Welcome = () => {
-  const wordTiles = 'HELLOWORLD'.split('').map(letter => {
+  const wordTiles = 'HELLO_WORLD'.split('').map(letter => {
     return (
       <Letter tile={letter} id={Date.now()}/>
       )

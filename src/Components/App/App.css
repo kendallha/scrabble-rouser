@@ -1,17 +1,22 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  position: fixed;
+html, body, .root, .main {
+  min-height: 100%;
+  overflow: auto;
   background: #c36c57;
 }
 
-.root {
+body, .root, .main{
+  height: 100vh;
+}
+
+/* .root {
   height: 100%;
   width: 100%;
-}
+} */
+
 .main {
   height: 100%;
   width: 100%;
+  margin: 0;
   background: #ce8f7a;
   color: black;
   font-family: 'Open Sans', sans-serif;
