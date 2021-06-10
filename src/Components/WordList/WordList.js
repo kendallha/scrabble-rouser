@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { getWordValue } from '../../utilities/value-calculations';
 import Letter from '../Letter/Letter';
 import './WordList.css';
 
-const WordList = ({ words }) => {
+const WordList = ({ words, message }) => {
   const wordList = words.map(word => {
     const letters = word.split('').map(letter => {
       return (
@@ -17,9 +18,20 @@ const WordList = ({ words }) => {
       </div>
     )
   });
-  return(
-    <section className='word-list'>{wordList}</section>
-  )
+  if (!words.length) {
+    return(
+      <div className='empty-wrapper' >
+        <h3 className='empty-message'>{message}</h3>
+        <Link to='/learn'>
+          <button className='start'>Show me a word</button>
+        </Link>
+      </div>
+    )
+  } else {
+    return(
+      <section className='word-list'>{wordList}</section>
+    )
+  }
 }
 
 export default WordList;

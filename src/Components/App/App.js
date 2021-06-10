@@ -36,12 +36,12 @@ class App extends Component {
           }} />
           <Route path='/saved' render={() => {
             return (
-            <WordList words={this.state.savedWords} />
+            <WordList words={this.state.savedWords} message="You haven't saved any words yet." />
             )
           }} />
           <Route path='/topscorers' render={() => {
             return (
-            <WordList words={this.state.topScorers} />
+            <WordList words={this.state.topScorers} message="You haven't encountered any top-scoring words yet. Let's go find some!" />
             )
           }} />
           <Route exact path='/' render={() => {
