@@ -19,14 +19,29 @@ class Word extends Component {
     try {
       const newWord = await getRandomWord(); 
       const formattedWord = newWord.word.toUpperCase();
-      this.setState({ 
-        word: formattedWord,
-        value: getWordValue(formattedWord)
-      })
-      this.evaluateWordScore();
+      const wordValue = getWordValue(formattedWord);
+      if (!this.checkForAcronyms(formattedWord) && wordValue) {
+        this.setState({ 
+          word: formattedWord,
+          value: wordValue
+        })
+        this.evaluateWordScore();
+      } else {
+        console.log("NO WAY");
+        console.log(formattedWord);
+        this.getNewWord();
+      }
     } catch (error) {
       console.log(error)
       this.setState({error: "Something went wrong, please try again."})
+    }
+  }
+
+  checkForAcronyms = (word) => {
+    if (word.split('').includes('A') || word.split('').includes('E') || word.split('').includes('I') || word.split('').includes('O') || word.split('').includes('U') || word.split('').includes('Y')) {
+      return false;
+    } else {
+      return true;
     }
   }
 
@@ -49,14 +64,14 @@ class Word extends Component {
         return(
           <Error error={this.state.error} />
         )
-    } else if (!this.state.value) {
-        return(
-          <div className='issue-wrapper'>
-            <h3 className='issue'>Oh no, we had a problem scoring this word. Let's try that again.</h3>
-            <button className='word-button' onClick={() => this.getNewWord()}>Another word</button>
-          </div>
+    // } else if (!this.state.value) {
+    //     return(
+    //       <div className='issue-wrapper'>
+    //         <h3 className='issue'>Oh no, we had a problem scoring this word. Let's try that again.</h3>
+    //         <button className='word-button' onClick={() => this.getNewWord()}>Another word</button>
+    //       </div>
 
-        )
+    //     )
     } else {
       const wordTiles = this.state.word.split('').map(letter => {
         return (
