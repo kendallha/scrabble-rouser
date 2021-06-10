@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .welcome {
   display: flex;
   flex-direction: column;
@@ -16,7 +20,7 @@
   font-size: 1.3em;
 }
 
-.start {
+/* .start {
   padding: 1%;
   font-size: 1.5em;
   background: #dfbf93;
@@ -26,4 +30,4 @@
 
 .start:hover {
   border: 2px solid black;
-}
+} */
