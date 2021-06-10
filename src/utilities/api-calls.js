@@ -6,7 +6,7 @@ export const getRandomWord = async () => {
 
 export const handleError = (response) => {
   if (!response.ok) {
-    throw new Error(response)
+    throw new Error(response.status)
   } else {
     return response.json()
   }

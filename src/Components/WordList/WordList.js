@@ -4,7 +4,7 @@ import { getWordValue } from '../../utilities/value-calculations';
 import Letter from '../Letter/Letter';
 import './WordList.css';
 
-const WordList = ({ words, message }) => {
+const WordList = ({ words, message, removeWord, type }) => {
   const wordList = words.map(word => {
     const letters = word.split('').map(letter => {
       return (
@@ -12,9 +12,10 @@ const WordList = ({ words, message }) => {
         )
       })
     return (
-      <div className='word-item'>
+      <div className='word-item' id={Math.random()}>
         <article className='word'>{letters}</article> 
         <p className='score'>{getWordValue(word)} points</p>
+        <i className="fas fa-times-circle fa-2x" onClick={() => removeWord(word, type)}></i>
       </div>
     )
   });

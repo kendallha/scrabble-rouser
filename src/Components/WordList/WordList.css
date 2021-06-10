@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.word-item:hover > i {
+  color: black;
+}
+
 .word {
   display: flex;
   width: 50%;
@@ -18,6 +22,12 @@
   margin-top: 3%;
   font-size: 1.5em;
   font-family: 'Mate SC', serif;
+}
+
+.fas {
+  margin-top: 4%;
+  margin-left: 6%;
+  color: transparent;
 }
 
 .empty-wrapper {

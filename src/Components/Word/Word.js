@@ -19,19 +19,34 @@ class Word extends Component {
     try {
       const newWord = await getRandomWord(); 
       const formattedWord = newWord.word.toUpperCase();
-      this.setState({ 
-        word: formattedWord,
-        value: getWordValue(formattedWord)
-      })
-      this.evaluateWordScore();
+      if (!this.checkForAcronyms(formattedWord) && getWordValue(formattedWord)) {
+        this.setState({ 
+          word: formattedWord,
+          value: getWordValue(formattedWord)
+        })
+        this.evaluateWordScore();
+      } else {
+        this.getNewWord();
+      }
     } catch (error) {
-      console.log(error)
-      this.setState({error: "Something went wrong, please try again."})
+      if (error.message === '429') {
+        this.setState({error: "Whoa there, champ! We're having trouble keeping up. Give us a moment to catch up and then try again."})
+      } else {
+          this.setState({error: "Something went wrong, please try again."})
+      }
     }
   }
 
   componentDidMount = async () => {
     this.getNewWord();
+  }
+
+  checkForAcronyms = (word) => {
+    if (word.split('').includes('A') || word.split('').includes('E') || word.split('').includes('I') || word.split('').includes('O') || word.split('').includes('U') || word.split('').includes('Y')) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   evaluateWordScore = () => {
@@ -52,7 +67,7 @@ class Word extends Component {
     } else {
       const wordTiles = this.state.word.split('').map(letter => {
         return (
-          <Letter tile={letter} />
+          <Letter tile={letter} id={Date.now()}/>
         )
       });
       return(
