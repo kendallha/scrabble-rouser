@@ -10,7 +10,7 @@ const WordList = ({ words, message, removeWord, type }) => {
   const wordList = words.map(word => {
     const letters = word.split('').map(letter => {
       return (
-        <Letter tile={letter} id={Date.now()}/>
+        <Letter tile={letter} key={Math.random()}/>
         )
       })
     return (

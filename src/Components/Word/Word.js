@@ -76,8 +76,8 @@ class Word extends Component {
           <article className="word-display">{wordTiles}</article>
           <h3 className='points'>{this.state.value} points</h3>
           <div className='buttons'>
-            <button className='word-button' onClick={() => this.getNewWord()}>Another word</button>
-            <button className='word-button' onClick={() => this.props.saveWord(this.state.word, 'savedWords')}>Save
+            <button className='word-button new' onClick={() => this.getNewWord()}>Another word</button>
+            <button className='word-button save' onClick={() => this.props.saveWord(this.state.word, 'savedWords')}>Save
             </button>
           </div>
         </section>
