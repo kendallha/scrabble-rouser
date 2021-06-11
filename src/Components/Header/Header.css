@@ -39,3 +39,25 @@ a {
   letter-spacing: .07em;
 }
 
+@media screen and (max-width: 850px) {
+  .nav {
+    margin-right: 3%;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .nav-link {
+    font-size: .9em;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .app-name {
+     font-size: 1.5em; 
+  }
+
+  .nav {
+    margin-right: 6%;
+  }
+}
