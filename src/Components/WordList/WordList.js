@@ -17,7 +17,7 @@ const WordList = ({ words, message, removeWord, type }) => {
       <div className='word-item' key={Math.random()}>
         <article className='word' key={Math.random()}>{letters}</article> 
         <p className='score'>{getWordValue(word)} points</p>
-        <i className="fas fa-times-circle fa-2x" onClick={() => removeWord(word, type)}></i>
+        <i className="fas fa-times fa-2x" onClick={() => removeWord(word, type)}role='button'></i>
       </div>
     )
   });

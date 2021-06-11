@@ -9,7 +9,7 @@
 }
 
 .word-item:hover > i {
-  color: black;
+  color: #c36c57;
 }
 
 .word {
@@ -25,7 +25,7 @@
 }
 
 .fas {
-  margin-top: 4%;
+  margin-top: 3%;
   margin-left: 6%;
   color: transparent;
 }
