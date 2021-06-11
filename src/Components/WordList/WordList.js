@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { getWordValue } from '../../utilities/value-calculations';
 import Letter from '../Letter/Letter';
 import './WordList.css';
+import PropTypes from 'prop-types';
 
 const WordList = ({ words, message, removeWord, type }) => {
+
   const wordList = words.map(word => {
     const letters = word.split('').map(letter => {
       return (
@@ -13,9 +15,9 @@ const WordList = ({ words, message, removeWord, type }) => {
       })
     return (
       <div className='word-item' key={Math.random()}>
-        <article className='word'>{letters}</article> 
+        <article className='word' key={Math.random()}>{letters}</article> 
         <p className='score'>{getWordValue(word)} points</p>
-        <i className="fas fa-times-circle fa-2x" onClick={() => removeWord(word, type)}></i>
+        <i className="fas fa-times fa-2x" onClick={() => removeWord(word, type)}role='button'></i>
       </div>
     )
   });
@@ -33,6 +35,13 @@ const WordList = ({ words, message, removeWord, type }) => {
       <section className='word-list'>{wordList}</section>
     )
   }
+}
+
+WordList.propTypes = {
+  words: PropTypes.array,
+  message: PropTypes.string,
+  removeWord: PropTypes.func,
+  type: PropTypes.string
 }
 
 export default WordList;
