@@ -1,17 +1,20 @@
 describe('Welcome', () => {
   beforeEach(() => {
+    cy.intercept('https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun%2C%20verb%2C%20adjective%2C%20adverb&excludePartOfSpeech=abbreviation%2C%20conjunction%2C%20family-name%2C%20given-name%2C%20idiom%2C%20phrasal-prefix%2C%20proper-noun%2C%20proper-noun-plural%2C%20proper-noun-possessive&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=2&maxLength=5&api_key=1weum3dz1dl1kbq02ep9xe0jt8ewzzu5wyc5quxfa80kz7rw1', {
+      word: "peach"
+    })
     cy.visit('http://localhost:3000/')
   })
 
   it('Should display "HELLO_WORLD" as a welcome message', () => {
     cy.get('.word-tiles').contains("H")
-    cy.get('.word-tiles').contains("E")
-    cy.get('.word-tiles').contains("L")
-    cy.get('.word-tiles').contains("O")
-    cy.get('.word-tiles').contains("_")
-    cy.get('.word-tiles').contains("W")
-    cy.get('.word-tiles').contains("R")
-    cy.get('.word-tiles').contains("D")
+      .get('.word-tiles').contains("E")
+      .get('.word-tiles').contains("L")
+      .get('.word-tiles').contains("O")
+      .get('.word-tiles').contains("_")
+      .get('.word-tiles').contains("W")
+      .get('.word-tiles').contains("R")
+      .get('.word-tiles').contains("D")
   })
 
   it('Should display a welcome message briefly explaining the app', () => {
@@ -19,7 +22,6 @@ describe('Welcome', () => {
   })
 
   it('Should display a button to get a word', () => {
-    cy.get('.start').should('exist')
     cy.get('.start').should('have.text', 'Show me a word')
   })
 
