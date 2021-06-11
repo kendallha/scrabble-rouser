@@ -10,12 +10,12 @@ const WordList = ({ words, message, removeWord, type }) => {
   const wordList = words.map(word => {
     const letters = word.split('').map(letter => {
       return (
-        <Letter tile={letter} id={Date.now()}/>
+        <Letter tile={letter} key={Math.random()}/>
         )
       })
     return (
-      <div className='word-item' key={Math.random()}>
-        <article className='word' key={Math.random()}>{letters}</article> 
+      <div className='word-item'>
+        <article className='word'>{letters}</article> 
         <p className='score'>{getWordValue(word)} points</p>
         <i className="fas fa-times fa-2x" onClick={() => removeWord(word, type)}role='button'></i>
       </div>
