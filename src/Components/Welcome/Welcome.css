@@ -20,14 +20,36 @@ a {
   font-size: 1.3em;
 }
 
-/* .start {
-  padding: 1%;
-  font-size: 1.5em;
-  background: #dfbf93;
-  border: 2px solid transparent;
-  font-family: 'Mate SC', serif;
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.start:hover {
-  border: 2px solid black;
-} */
+@media screen and (max-width: 800px) {
+  .word-tiles {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 518px) {
+  .word-tiles {
+    flex-direction: column;
+  }
+
+  .welcome {
+   flex-direction: row;
+   align-items: flex-start;
+   padding-left: 2%;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+  }
+
+  .start {
+    margin-top: 10%;
+  }
+}

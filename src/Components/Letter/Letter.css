@@ -1,3 +1,9 @@
 .scrabble-wrapper {
   margin: 1%;
 }
+
+@media screen and (max-width: 480px) {
+  .scrabble-wrapper {
+    margin: 0;
+  }
+}
