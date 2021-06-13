@@ -50,3 +50,19 @@
   margin: 5% 0;
   word-spacing: .06em;
 }
+
+@media screen and (max-width: 647px) {
+  .buttons {
+    width: 70%;
+  }
+
+  .word-button {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .buttons {
+    width: 100%;
+  }
+}
