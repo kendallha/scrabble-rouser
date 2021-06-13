@@ -1,4 +1,4 @@
-describe('RouteErrorHandling', () => {
+describe('Route error handling', () => {
   beforeEach(() => {
       cy.visit('http://localhost:3000/')
   })
