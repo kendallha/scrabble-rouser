@@ -47,31 +47,20 @@ https://github.com/kendallha/scrabble-rouser
 ## Walkthrough
 
 ### Home Page
-  - The home page of the site provides an overview of the application, and encourages the user to get started.
-
-
-Desktop
-
-<img src="https://media.giphy.com/media/UfnQbDQY7zAOfMQB9c/giphy.gif" width="400">
-
-
-Mobile
-
-<img src="https://media.giphy.com/media/etjDoP9KDILY2io1gr/giphy.gif" width="400">
-
+The home page of the site provides an overview of the application, and encourages the user to get started.
 
 Clicking on 'Show me a word' takes the user to the 'Learn words' page, where they are shown a potential scrabble word, along with its word score. A user can save a word, and choose to see another.
 
-<img src="https://media.giphy.com/media/YekhfBSeOEmszgxdmp/giphy.gif" width="400">
+<img src="https://media.giphy.com/media/k945xn7yt5GuXWKEiP/giphy.gif" width="400">
 
 By visiting the 'Saved words' page, a user can see any of the words they have chosen to save, and can delete any they no longer wish to view.
 
-<img src="https://media.giphy.com/media/ZsRzq3pbDd7USew5qc/giphy.gif" width="400">
+<img src="https://media.giphy.com/media/0WUAcv9NrzB0YEwE0q/giphy.gif" width="400">
 
 
 All words with a score of 10 or higher are automatically saved to 'Top-scorers', and can be deleted by the user.
 
-<img src="https://media.giphy.com/media/dDMX06YuheYOiWB0yB/giphy.gif" width="400">
+<img src="https://media.giphy.com/media/kUqj1vCaLE3dbguOBn/giphy.gif" width="400">
 
 Saved words and top-scorers are saved to local storage, so they are available to view after refresh.
 
