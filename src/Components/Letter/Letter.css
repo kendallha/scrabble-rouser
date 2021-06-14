@@ -1,9 +1,9 @@
-.scrabble-wrapper {
+.scrabble-tile {
   margin: 1%;
 }
 
 @media screen and (max-width: 480px) {
-  .scrabble-wrapper {
+  .scrabble-tile {
     margin: 0;
   }
 }

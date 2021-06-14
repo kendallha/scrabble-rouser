@@ -40,7 +40,7 @@ const WordList = ({ words, message, removeWord, type }) => {
 }
 
 WordList.propTypes = {
-  words: PropTypes.array,
+  words: PropTypes.arrayOf(PropTypes.string),
   message: PropTypes.string,
   removeWord: PropTypes.func,
   type: PropTypes.string
