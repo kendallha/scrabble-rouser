@@ -18,6 +18,10 @@ class Word extends Component {
 
   getNewWord = async () => {
     try {
+      this.setState({
+        word: '',
+        value: ''
+      })
       const newWord = await getRandomWord(); 
       const formattedWord = newWord.word.toUpperCase();
       if (!this.checkForAcronyms(formattedWord) && getWordValue(formattedWord)) {
