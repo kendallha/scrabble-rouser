@@ -7,7 +7,7 @@
 * [Walkthrough](#walkthrough)
 * [Learning Goals](#learning-goals)
 * [Reflections](#reflections)
-* [Contributors](#contributors)
+* [Author](#author)
 * [Technologies](#technologies)
 * [Additional Resources](#additional-resources)
 
@@ -20,7 +20,7 @@
 
 ### Deploy Link
 
-http://golookatatree.surge.sh/
+http://scrabble-rouser.surge.sh/
 
 ### Frontend Repo
 
@@ -49,10 +49,6 @@ https://github.com/kendallha/scrabble-rouser
 ### Home Page
 The home page of the site provides an overview of the application, and encourages the user to get started.
 
-Desktop
-
-Mobile 
-
 Clicking on 'Show me a word' takes the user to the 'Learn words' page, where they are shown a potential scrabble word, along with its word score. A user can save a word, and choose to see another.
 
 <img src="https://media.giphy.com/media/k945xn7yt5GuXWKEiP/giphy.gif" width="400">
@@ -60,7 +56,6 @@ Clicking on 'Show me a word' takes the user to the 'Learn words' page, where the
 By visiting the 'Saved words' page, a user can see any of the words they have chosen to save, and can delete any they no longer wish to view.
 
 <img src="https://media.giphy.com/media/0WUAcv9NrzB0YEwE0q/giphy.gif" width="400">
-
 
 All words with a score of 10 or higher are automatically saved to 'Top-scorers', and can be deleted by the user.
 
