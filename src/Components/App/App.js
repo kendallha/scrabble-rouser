@@ -22,7 +22,7 @@ class App extends Component {
 
   saveWord = (word, type) => {
     if (!this.state[type].includes(word)) {
-      this.setState({[type]: [...this.state[type], word]}) 
+      this.setState({[type]: [...this.state[type], word]}, () => this.saveToStorage(type)) 
     }
   }
 
@@ -37,22 +37,15 @@ class App extends Component {
       savedWords: savedWordsString,
       topScorers: topWordsList
     })
-  
   }
 
   removeFromSaved = (word, type) => {
     const newList = this.state[type];
     newList.splice(this.state[type].indexOf(word),1);
-    this.setState({[type]: newList})
+    this.setState({[type]: newList}, () => this.saveToStorage(type))
   }
 
   render() { 
-    if (this.state.savedWords.length) {
-      this.saveToStorage('savedWords');
-    }
-    if (this.state.topScorers.length) {
-      this.saveToStorage('topScorers');
-    }
     return (
       <main className='main'>
         <Header />
