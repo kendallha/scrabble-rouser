@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 
 const Letter = ({ tile }) => {
   return(
-    <div className='scrabble-wrapper' >
+    <article className='scrabble-tile' >
       <div className="scrabble-container">
         <span className="scrabble-tile__letter">{tile}<span className="scrabble-tile__number">{letterValues[tile]}</span></span>
       </div>
-    </div>
+    </article>
   )
 }
 

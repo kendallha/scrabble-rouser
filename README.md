@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# Scrabble-rouser
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Notable Features](#notable-features)
+* [Walkthrough](#walkthrough)
+* [Learning Goals](#learning-goals)
+* [Reflections](#reflections)
+* [Contributors](#contributors)
+* [Technologies](#technologies)
+* [Additional Resources](#additional-resources)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+ - This was the Mod 3 final project assigned by [Turing School of Software and Design](www.turing.edu). For this project, I had 6 days create a React application for a very specific, niche audience. 
 
-### `npm start`
+ - Scrabble-rouser is a Scrabble-training app designed for competitive Scrabble players. The app utlizes a random-word API to help players identify and save high-scoring words, and words they aren't familiar with and would like to revisit.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Deploy Link
 
-### `npm test`
+http://golookatatree.surge.sh/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend Repo
 
-### `npm run build`
+https://github.com/kendallha/scrabble-rouser
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Notable features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ - Built using React framework
+ - Use of Router to enable user to navigate using back and forward browser controls, and to visit site pages directly using URL paths
+ - Frontend tested with Cypress acceptance testing including the use of stubbed fetch data and happy/sad paths
+ - Utilized responsive design for mobile, tablet or desktop viewing
+ - 100% Lighthouse accessibility score
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Installation
+1. Clone down this [repo](https://github.com/kendallha/scrabble-rouser)
+2. `cd` into project directory
+3. Run `npm i` to install all project dependencies
+4. Run `npm start` to begin the server
+5. Application should open in default browser window (if not, navigate to http://localhost:3000)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Walkthrough
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Home Page
+The home page of the site provides an overview of the application, and encourages the user to get started.
 
-## Learn More
+Desktop
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Mobile 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Clicking on 'Show me a word' takes the user to the 'Learn words' page, where they are shown a potential scrabble word, along with its word score. A user can save a word, and choose to see another.
 
-### Code Splitting
+<img src="https://media.giphy.com/media/k945xn7yt5GuXWKEiP/giphy.gif" width="400">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+By visiting the 'Saved words' page, a user can see any of the words they have chosen to save, and can delete any they no longer wish to view.
 
-### Analyzing the Bundle Size
+<img src="https://media.giphy.com/media/0WUAcv9NrzB0YEwE0q/giphy.gif" width="400">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+All words with a score of 10 or higher are automatically saved to 'Top-scorers', and can be deleted by the user.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<img src="https://media.giphy.com/media/kUqj1vCaLE3dbguOBn/giphy.gif" width="400">
 
-### Advanced Configuration
+Saved words and top-scorers are saved to local storage, so they are available to view after refresh.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Learning Goals
 
-### Deployment
+- Understand how to create user personas and use those to guide the design of an application
+- Demonstrate mastery of the following:
+  - React
+  - Router
+  - Asynchronous JavaScript
+  - End to end testing with Cypress
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Reflections
 
-### `npm run build` fails to minify
+- This project was a lot of fun to build, partially due to the humorous nature of the niche audience. Because it was meant to evaluate skills I have developed over the last 5 weeks, I felt pretty comfortable with the technologies implemented. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The biggest blocker I faced was dealing with the API returning acronyms and words with special characters (not Scrabble-legal). I added a few functions to clean out some of the ineligible words before displaying them to help with this issue. I also was frequently rate-limited when requesting words,  so I created a specific error response if the user triggers a 429 response from the API (rate limiting). 
+
+## Author
+<table>
+    <tr>
+      <td><a href="https://github.com/kendallha">Kendall Haworth</td>
+    </tr>
+    <tr>
+      <td><img src="https://avatars.githubusercontent.com/u/25498241?v=4" alt="K. Haworth" width="125" height="auto" /></td>
+    </tr>
+</table>
+
+## Technologies
+<table>
+  <tr>
+    <td><img src="https://mildaintrainings.com/wp-content/uploads/2017/11/react-logo.png" alt="react" width="100" height="auto" /></td>
+    <td><img src="https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png" alt="javascript" width="100" height="auto" /></td>
+    <td><img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="html" width="100" height="auto" /></td>
+    <td><img src="https://www.pinclipart.com/picdir/middle/175-1759459_eng-a-med-kamel-frameworks-css-css-logo.png" alt="css" width="100" height="auto" /></td>
+    <td><img src="https://media-exp1.licdn.com/dms/image/C4E0BAQGhE8jNwjlc3w/company-logo_200_200/0/1554836371931?e=2159024400&v=beta&t=tQbdczcJ9C9g1pggtEXpC5CQgaFxCZn_d3CAOyeWWDU" alt="cypress" width="100" height="auto" /></td>
+  </tr> 
+</table>
+
+## Additional resources
+  - This project utilizes [this](http://theonicolaou.github.io/scrabble-tiles/) Bower package to style letters as scrabble tiles. Special thanks to [Theo Nicalaou](https://github.com/theonicolaou) for creating and sharing this!
+
+
+
