@@ -49,6 +49,10 @@ https://github.com/kendallha/scrabble-rouser
 ### Home Page
 The home page of the site provides an overview of the application, and encourages the user to get started.
 
+Desktop
+
+Mobile 
+
 Clicking on 'Show me a word' takes the user to the 'Learn words' page, where they are shown a potential scrabble word, along with its word score. A user can save a word, and choose to see another.
 
 <img src="https://media.giphy.com/media/k945xn7yt5GuXWKEiP/giphy.gif" width="400">
